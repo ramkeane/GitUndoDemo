@@ -6,7 +6,7 @@ public static boolean validate(String name,String pass){
 boolean status=false;
 try{
 	Class.forName("oracle.jdbc.driver.OracleDriver");
-	Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");
+	Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","sysuser","oracle19");
 	
 	PreparedStatement ps=con.prepareStatement("select * from userreg where name=? and pass=?");
 	ps.setString(1,name);
